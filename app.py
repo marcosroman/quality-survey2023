@@ -14,9 +14,9 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Connection credentials
-db_user = 'user'
-db_pass = 'CK3Qn8;,qPG$}hHN'
-db_name = 'testo'
+db_user = 'usuario'
+db_pass = 'pa55wort0_'
+db_name = 'encuesta2023'
 
 # configuring our database uri
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://{username}:{password}@localhost/{dbname}".format(
@@ -25,29 +25,17 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False;
 
 db = SQLAlchemy(app)
 
-#session = db.Session()
-
-print(dir(db))
-
-# from sqlalchemy import create_engine, Column, Integer, String
-# from sqlalchemy.orm import declarative_base, sessionmaker
-
-
-class T(db.Model):
-    __tablename__ = 't'
-    id = db.Column(db.String, primary_key=True)
-
-
-ts = T.query.all()
-
-for t in ts:
-    print(t)
+class Encuestados(db.Model):
+    __tablename__ = 'encuestados'
+    id = db.Column(db.String(36), primary_key=True)
+    nombre = db.Column(db.String(50))
+    numero = db.Column(db.String(30))
+    asesor = db.Column(db.String(20))
 
 class Respuestas(db.Model):
     __tablename__ = "respuestas"
     id = db.Column(db.String(36), primary_key=True)
     ip = db.Column(db.String(16), nullable=False)
-    # for i in {1..15}; do echo "respuesta$i = db.Column(db.Integer, nullable=True)"; done|pbcopy
     respuesta1 = db.Column(db.Integer, nullable=True)
     respuesta2 = db.Column(db.Integer, nullable=True)
     respuesta3 = db.Column(db.Integer, nullable=True)
@@ -69,29 +57,24 @@ class Respuestas(db.Model):
     nombre = db.Column(db.String(50), nullable=False)
     whatsapp = db.Column(db.String(10), nullable=False)
     vendedor = db.Column(db.String(50), nullable=False)
-# me genera la tabla con tipo varchar, espero que no sea problema eso
 
-
-db.create_all()
-
+with app.app_context():
+    db.create_all()
 
 @app.route('/', methods=['GET', 'POST'])
 def survey():
     if request.method == 'POST':
-        # guardar aca informacion de la base de datos! (aca tengo los resultados del cliente ya :D)
         print(request.form)
         return 'Thank you for your responses!'
     else:
-        return render_template('survey.html')
+        return 'Solicite un codigo a su asesor'# render_template('survey.html')
 
 
 @app.route('/cliente/<uuid>', methods=['GET', 'POST'])
 def survey2(uuid):
-
-    db.create_all()
     # para entregar el formulario debo comprobar que ya no fue llenado antes... eso primero deberia comprobar!
     rentries_count = Respuestas.query.filter(Respuestas.id == uuid).count()
-    print("rentries_count is ",rentries_count)
+    #print("rentries_count is ",rentries_count)
     # aca primero busco si existe el entry con el uuid requerido... si no, digo que no hay y chau
     if (rentries_count == 0):
         tentries = T.query.filter(T.id == uuid).all()
