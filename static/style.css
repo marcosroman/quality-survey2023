@@ -86,7 +86,7 @@ td label {
 	/*display: block;*/
 	width: fit-content;
 }
-select {
+option {
 	justify-self: center;
 }
 .datoscliente {
@@ -97,3 +97,5 @@ select {
 	flex-flow: column;
 
 }
+
+

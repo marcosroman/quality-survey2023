@@ -28,9 +28,9 @@ db = SQLAlchemy(app)
 class Encuestados(db.Model):
     __tablename__ = 'encuestados'
     id = db.Column(db.String(36), primary_key=True)
-    nombre = db.Column(db.String(50))
-    numero = db.Column(db.String(30))
-    asesor = db.Column(db.String(20))
+    nombre = db.Column(db.String(50), nullable=False)
+    numero = db.Column(db.String(30), nullable=False)
+    asesor = db.Column(db.String(50), nullable=False)
 
 class Respuestas(db.Model):
     __tablename__ = "respuestas"
@@ -61,14 +61,14 @@ class Respuestas(db.Model):
 with app.app_context():
     db.create_all()
 
-@app.route('/', methods=['GET', 'POST'])
-def survey():
-    if request.method == 'POST':
-        print(request.form)
-        return 'Thank you for your responses!'
-    else:
-        return 'Solicite un codigo a su asesor'# render_template('survey.html')
-
+#@app.route('/', methods=['GET', 'POST'])
+#def survey():
+#    if request.method == 'POST':
+#        print(request.form)
+#        return 'Thank you for your responses!'
+#    else:
+#        return 'Solicite un codigo a su asesor'# render_template('survey.html')
+#
 
 @app.route('/cliente/<uuid>', methods=['GET', 'POST'])
 def survey2(uuid):
@@ -77,7 +77,7 @@ def survey2(uuid):
     #print("rentries_count is ",rentries_count)
     # aca primero busco si existe el entry con el uuid requerido... si no, digo que no hay y chau
     if (rentries_count == 0):
-        tentries = T.query.filter(T.id == uuid).all()
+        tentries = Encuestados.query.filter(Encuestados.id == uuid).all()
         if len(tentries) == 1:
             print('the id is', tentries[0].id)  # it works
             if request.method == 'POST':
