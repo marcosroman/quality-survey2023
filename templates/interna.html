@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<title>Encuesta interna GLASSTEX</title>
+	<link rel="stylesheet" href={{url_for('static', filename='style.css')}}>
+	<link rel="stylesheet" href="https://unpkg.com/mobi.css/dist/mobi.min.css" />
+</head>
+
+<body>
+		<header>
+			<h1 class="text-center">Encuesta interna</h1>
+			<div id="logo" class="flex-center">
+				<img src={{url_for('static', filename='logo.png')}}>
+			</div>
+		</header>
+
+		<p>Estimado/a colaborador(a):</p>
+		<p>Queremos escucharte.</p>
+		<p>Glasstex (MARCOS ROMAN S.A.) es una empresa que cuenta con la marca ONC-INTN SISTEMA DE GESTIÓN.</p>
+		<p>Para ello, la organizacion cumple y debe seguir cumpliendo con los requisitos enunciados en la norma <a href="http://192.168.2.57/portal-calidad/sgc/normas/NP-ISO9001_04.pdf">NP-ISO 9001 2015</a>.</p>
+		<p>El propósito de esta encuesta es recolectar información relevante, basada en sus posturas, opiniones y sugerencias.</p>
+		<p style="font-weight: bold; font-size: larger;">Los resultados de esta encuesta serán confidenciales.</p>
+		<p>Solamente el personal de calidad tendrá acceso al detalle de las respuestas. Es opcional dar sus nombres. Lo importante es que respondan con total honestidad y sinceridad, sin miedo.</p>
+		<p>Compartiremos únicamente (con el directorio) un resumen de sus respuestas, para determinar el clima laboral actual y el alineamiento con la norma.</p>
+		<br>
+	
+	<form class="form" method="post">
+		<div style="font-size: larger";>
+			<p>Por favor responda a las siguientes preguntas:</p>
+		</div>
+		<div style="font-size: smaller";>
+			<p>(Presione donde dice "Escoja una opción" para seleccionar su respuesta. En algunos puntos se le pedirá que escriba su respuesta.)</p>
+		</div>
+		<br>
+
+		<ul>
+			<li>Soy del área de
+			<select name="area" id="area" required>
+				<option value="" selected disabled>Escoja una opción</option>
+				<option value="produccion">Producción (Vidrio)</option>
+				<option value="produccion_alu">Producción (Aluminio)</option>
+				<option value="calidad">Calidad</option>
+				<option value="expedicion">Logística/Expedición</option>
+				<option value="ventas">Ventas</option>
+				<option value="rrhh">RRHH</option>
+				<option value="informatica">Informática</option>
+				<option value="administracion">Administración</option>
+				<option value="contabilidad">Contabilidad</option>
+				<option value="otro">Otro</option>
+			</select>
+			</li>
+
+			<li>Trabajo en Glasstex hace
+		<select name="antiguedad" id="antiguedad" required>
+			<option value="" selected disabled>Escoja una opción</option>
+			<option value="1">Menos de 1 año</option>
+			<option value="2">1 a 2 años</option>
+			<option value="3">3 a 5 años</option>
+			<option value="4">6 a 8 años</option>
+			<option value="5">8 a 10 años</option>
+			<option value="6">Más de 10 años</option>
+		</select>
+		(si saliste y volviste a entrar, tener en cuenta el tiempo total)
+			</li>
+
+
+			<li>Me suele ayudar la gente de mi área o departamento
+				<div class="pregunta">
+					<select name="pregunta1" id="pregunta1" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica / Nunca pedí ayuda</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Me suele ayudar la gente de otras áreas de la empresa
+				<div class="pregunta">
+					<select name="pregunta2" id="pregunta2" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica / Nunca pedí ayuda</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Cuando entré a trabajar en la empresa me sentí bienvenido
+				<div class="pregunta">
+					<select name="pregunta3" id="pregunta3" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Creo que tenemos un buen ambiente de trabajo
+				<div class="pregunta">
+					<select name="pregunta4" id="pregunta4" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+						<option value="null">No sé</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Cuando entré a Glasstex recibí suficiente información sobre la empresa
+				<div class="pregunta">
+					<select name="pregunta5" id="pregunta5" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+						<option value="null">No sé</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Al unirme a Glasstex recibí suficiente información sobre mi área de trabajo y mi función en la misma
+				<div class="pregunta">
+					<select name="pregunta6" id="pregunta6" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+						<option value="null">No sé</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Las comunicaciones internas nos dan información útil
+				<div class="pregunta">
+					<select name="pregunta7" id="pregunta7" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+						<option value="null">No sé / Nunca recibí</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Tengo disponible información sobre el catálogo de productos y servicios que ofrece Glasstex
+				<div class="pregunta">
+					<select name="pregunta8" id="pregunta8" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Conozco el Código Interno (Ético y de Conducta) de Glasstex
+				<div class="pregunta">
+					<select name="pregunta9" id="pregunta9" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>La comunicación sobre los resultados y marcha de la empresa es clara y transparente
+				<div class="pregunta">
+					<select name="pregunta10" id="pregunta10" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+						<option value="null">No sé</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Glasstex cumple las normas de Seguridad y Salud en el trabajo
+				<div class="pregunta">
+					<select name="pregunta11" id="pregunta11" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No sé / No aplica</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Dispongo de los materiales y recursos necesarios para realizar mi trabajo (por ejemplo: EPIs, uniforme, herramientas, etc.)
+				<div class="pregunta">
+					<select name="pregunta12" id="pregunta12" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Las condiciones de espacio, ruido, temperatura, iluminación, etc. me permiten desempeñar mi trabajo con normalidad y sin dificultades innecesarias
+				<div class="pregunta">
+					<select name="pregunta13" id="pregunta13" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Considero adecuados los criterios de evaluación de mi desempeño
+				<div class="pregunta">
+					<select name="pregunta14" id="pregunta14" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No sé / No me han informado de ninguna evaluación</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Los cambios de puesto de trabajo se realizan de manera justa
+				<div class="pregunta">
+					<select name="pregunta15" id="pregunta15" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No sé</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Creo que tengo la oportunidad de desarrollarme profesionalmente en Glasstex
+				<div class="pregunta">
+					<select name="pregunta16" id="pregunta16" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+						<option value="null">No sé</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Al asumir un nuevo puesto, mi responsable me informa de manera clara sobre las funciones y responsabilidades del puesto de trabajo
+				<div class="pregunta">
+					<select name="pregunta17" id="pregunta17" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Recibo formación para actualizar los conocimientos de mi trabajo
+				<div class="pregunta">
+					<select name="pregunta18" id="pregunta18" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Sé quién es mi jefe directo o responsable en la empresa (a quien me reporto directamente)
+				<div class="pregunta">
+					<select name="pregunta19" id="pregunta19" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mi jefe directo se llama
+				<div class="pregunta">
+					<input type="text" name="pregunta20" id="pregunta20" placeholder="Escriba su respuesta" maxlength=30 required>
+				</div>
+
+			</li>
+
+			<li>Sé ubicar mi puesto en el organigrama de la organización
+				<div class="pregunta">
+					<select name="pregunta21" id="pregunta21" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+						<option value="null">No sé / Nunca vi el organigrama</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mi responsable se preocupa por transmitir los valores, misión y objetivos de Glasstex
+				<div class="pregunta">
+					<select name="pregunta22" id="pregunta22" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mi responsable me proporciona periódicamente información sobre mi desempeño
+				<div class="pregunta">
+					<select name="pregunta23" id="pregunta23" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mi responsable es claro y específico cuando define mis objetivos de trabajo o los del departamento
+				<div class="pregunta">
+					<select name="pregunta24" id="pregunta24" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No sé</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Mi responsable escucha mis opiniones y me hace partícipe de las decisiones
+				<div class="pregunta">
+					<select name="pregunta25" id="pregunta25" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mi responsable me felicita cuando realizo bien mi trabajo
+				<div class="pregunta">
+					<select name="pregunta26" id="pregunta26" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mi responsable se preocupa por mantener un buen clima en el equipo
+				<div class="pregunta">
+					<select name="pregunta27" id="pregunta27" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mi responsable se preocupa por conocer mis necesidades e intereses
+				<div class="pregunta">
+					<select name="pregunta28" id="pregunta28" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mi responsable me trata de forma justa y evita cualquier tipo de favoritismo
+				<div class="pregunta">
+					<select name="pregunta29" id="pregunta29" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mantengo una buena relación con mi responsable
+				<div class="pregunta">
+					<select name="pregunta30" id="pregunta30" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Tengo autonomia y puedo tomar decisiones propias sin necesidad de consultar con mi jefe
+				<div class="pregunta">
+					<select name="pregunta31" id="pregunta31" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Me parece que se le tiene en cuenta a mi responsable dentro de la empresa
+				<div class="pregunta">
+					<select name="pregunta32" id="pregunta32" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Los procesos y procedimientos de trabajo en Glasstex me orientan hacia el cliente
+				<div class="pregunta">
+					<select name="pregunta33" id="pregunta33" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No conozco los procedimientos</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Estoy dispuesto a realizar un esfuerzo extra para satisfacer al cliente
+				<div class="pregunta">
+					<select name="pregunta34" id="pregunta34" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Le hablé ya alguna vez a mis conocidos para que compren de Glasstex
+				<div class="pregunta">
+					<select name="pregunta35" id="pregunta35" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Recibo la ayuda que necesito del departamento de Producción
+				<div class="pregunta">
+					<select name="pregunta36" id="pregunta36" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica / Nunca solicité</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Recibo la ayuda que necesito del departamento de Calidad
+				<div class="pregunta">
+					<select name="pregunta37" id="pregunta37" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica / Nunca solicité</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Recibo la ayuda que necesito del departamento de Logística/Expedición
+				<div class="pregunta">
+					<select name="pregunta38" id="pregunta38" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica / Nunca solicité</option>
+					</select>
+				</div>
+			</li>
+
+
+
+			<li>Recibo la ayuda que necesito del departamento de Ventas
+				<div class="pregunta">
+					<select name="pregunta39" id="pregunta39" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica / Nunca solicité</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Recibo la ayuda que necesito del departamento de Recursos Humanos
+				<div class="pregunta">
+					<select name="pregunta40" id="pregunta40" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica / Nunca solicité</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Recibo la ayuda que necesito del departamento de Informática
+				<div class="pregunta">
+					<select name="pregunta41" id="pregunta41" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica / Nunca solicité</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Recibo la ayuda que necesito del departamento de Administración y Compras
+				<div class="pregunta">
+					<select name="pregunta42" id="pregunta42" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica / Nunca solicité</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Tengo claras cuáles son mis tareas y responsabilidades
+				<div class="pregunta">
+					<select name="pregunta43" id="pregunta43" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Entiendo cómo mi trabajo contribuye a conseguir los resultados de mi departamento
+				<div class="pregunta">
+					<select name="pregunta44" id="pregunta44" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+						<option value="null">No aplica</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mi trabajo me ofrece retos y la oportunidad de seguir mejorando
+				<div class="pregunta">
+					<select name="pregunta45" id="pregunta45" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Tengo la oportunidad de proponer nuevas y/o mejores formas de realizar el trabajo
+				<div class="pregunta">
+					<select name="pregunta46" id="pregunta46" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+			<li>Mi trabajo es reconocido y valorado
+				<div class="pregunta">
+					<select name="pregunta47" id="pregunta47" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Tengo la información que necesito para realizar mi trabajo con excelencia
+				<div class="pregunta">
+					<select name="pregunta48" id="pregunta48" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mis compañeros de trabajo actúan con respeto y de manera ética
+				<div class="pregunta">
+					<select name="pregunta49" id="pregunta49" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Mi jefe y/o superiores en Glasstex actúan con respeto y de manera ética
+				<div class="pregunta">
+					<select name="pregunta50" id="pregunta50" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">No aplica</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Considero que Glasstex innova y mejora continuamente para ser el líder de su sector
+				<div class="pregunta">
+					<select name="pregunta51" id="pregunta51" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+						<option value="null">Qué me importa / Mba'e pio che</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Estoy satisfecho con mi trabajo en Glasstex
+				<div class="pregunta">
+					<select name="pregunta52" id="pregunta52" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Pienso que Glasstex es un buen lugar para trabajar y me gustaría continuar trabajando aquí
+				<div class="pregunta">
+					<select name="pregunta53" id="pregunta53" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+						<option value="null">No sé / No estoy seguro</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Pienso que Glasstex se ha ido transformando en un lugar mejor para trabajar
+				<div class="pregunta">
+					<select name="pregunta54" id="pregunta54" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Recomendaría a Glasstex como lugar para trabajar
+				<div class="pregunta">
+					<select name="pregunta55" id="pregunta55" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="y">Sí</option>
+						<option value="n">No</option>
+						<option value="null">No sé / No estoy seguro</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Me siento parte de Glasstex
+				<div class="pregunta">
+					<select name="pregunta56" id="pregunta56" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+
+			<li>Me siento orgulloso de trabajar en Glasstex
+				<div class="pregunta">
+					<select name="pregunta57" id="pregunta57" required>
+						<option value="" selected disabled>Escoja una opción</option>
+						<option value="2">Siempre</option>
+						<option value="1">A veces</option>
+						<option value="-1">Casi nunca</option>
+						<option value="-2">Nunca</option>
+					</select>
+				</div>
+			</li>
+
+			<li>¿Qué te parece que se podría mejorar en Glasstex?
+				<div class="pregunta">
+					<textarea placeholder="Escriba su respuesta" name="mejoras" id="mejoras" maxlength=500></textarea>
+				</div>
+			</li>
+
+			<li>Si tuvieras que ascender y/o dar mayor responsabilidad a alguien de la empresa (no a vos, otra persona): ¿A quién sería? ¿Por qué?
+				<div class="pregunta">
+					<textarea placeholder="Escriba su respuesta" name="aquienascender" id="aquienascender" maxlength=500 required></textarea>
+				</div>
+			</li>
+
+			<li>¿Si tuvieras que despedir a alguien de la empresa: ¿A quién sería? ¿Por qué?
+				<div class="pregunta">
+					<textarea placeholder="Escriba su respuesta" name="aquiendespedir" id="aquiendespedir" maxlength=500 required></textarea>
+				</div>
+			</li>
+
+			<li>¿Comentarios? ¿Sugerencias?
+				<div class="pregunta">
+					<textarea placeholder="Escriba su respuesta" name="comentarios" id="comentarios" maxlength=500></textarea>
+				</div>
+			</li>
+
+			<li>Tu nombre (opcional): 
+				<div class="pregunta">
+					<input type="text" placeholder="Escriba su respuesta" name="nombre" id="nombre" maxlength=50>
+				</div>
+			</li>
+		</ul>
+
+		<div class='submit flex-center'>
+			<input type="submit" value="Enviar" class="btn btn-primary">
+		</div>
+	</form>
+</body>
+</html>
